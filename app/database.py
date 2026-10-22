@@ -11,7 +11,7 @@ load_dotenv()
 # Utilisée par défaut en local via docker-compose, surchargeable avec un .env
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://catalogue:catalogue@localhost:5432/catalogue_films",
+    "postgresql+psycopg2://catalogue:catalogue@localhost:5432/catalogue_films",
 )
 
 engine = create_engine(DATABASE_URL)
