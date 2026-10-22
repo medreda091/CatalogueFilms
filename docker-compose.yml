@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: catalogue
+      POSTGRES_PASSWORD: catalogue
+      POSTGRES_DB: catalogue_films
+    ports:
+      - "5432:5432"
+    volumes:
+      - donnees_postgres:/var/lib/postgresql/data
+
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg2://catalogue:catalogue@db:5432/catalogue_films
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+volumes:
+  donnees_postgres:
