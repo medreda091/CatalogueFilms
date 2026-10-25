@@ -96,3 +96,9 @@ pytest tests/ -q
 ## Licence
 
 MIT
+
+## Roadmap
+
+- Recommandations de films : suggérer des films en fonction des notes et des favoris de l'utilisateur.
+- Import CSV : importer un catalogue de films en une fois depuis un fichier CSV.
+- Tri avancé : trier les films par note, année, genre ou durée, dans l'ordre croissant ou décroissant.
